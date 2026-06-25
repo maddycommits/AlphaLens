@@ -6,7 +6,7 @@ AI-powered financial research platform leveraging Java, Spring Boot, Agentic AI,
 ### Week 1
 
 - [x] Repository created
-- [ ] Spring Boot bootstrap
+- [x] Spring Boot bootstrap
 - [ ] Swagger integration
 - [ ] Company API
 - [ ] PostgreSQL setup
