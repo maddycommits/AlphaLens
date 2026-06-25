@@ -1,0 +1,19 @@
+package com.alphalens.backend.controller;
+
+import com.alphalens.backend.dto.CompanyResponse;
+import org.springframework.web.bind.annotation.*;
+
+@RestController
+@RequestMapping("/api/v1/company")
+public class CompanyController {
+
+    @GetMapping("/{ticker}")
+    public CompanyResponse getCompany(
+            @PathVariable String ticker) {
+
+        return new CompanyResponse(
+                ticker.toUpperCase(),
+                "Apple Inc.",
+                "Technology");
+    }
+}
