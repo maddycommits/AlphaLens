@@ -1,9 +1,3 @@
 spring:
   application:
     name: backend
-
-management:
-  endpoints:
-    web:
-      exposure:
-        include: mappings
