@@ -1,6 +1,6 @@
 package com.alphalens.backend.controller;
 
-import com.alphalens.backend.dto.CompanyResponse;
+import com.alphalens.backend.model.Company;
 import com.alphalens.backend.service.CompanyService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,7 +19,7 @@ public class CompanyController {
     }
 
     @GetMapping("/{ticker}")
-    public ResponseEntity<CompanyResponse> getCompany(@PathVariable String ticker) {
+    public ResponseEntity<Company> getByTicker(@PathVariable String ticker) {
         return companyService.findByTicker(ticker)
                 .map(ResponseEntity::ok)
                 .orElseGet(() -> ResponseEntity.notFound().build());
