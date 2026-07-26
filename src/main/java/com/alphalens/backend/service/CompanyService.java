@@ -1,6 +1,7 @@
 package com.alphalens.backend.service;
 
 import com.alphalens.backend.model.Company;
+import com.alphalens.backend.model.MarketCap;
 import org.springframework.stereotype.Service;
 
 import java.util.Map;
@@ -14,20 +15,24 @@ import java.util.Optional;
 public class CompanyService {
 
     private final Map<String, Company> companiesByTicker = Map.of(
-            "AAPL", new Company("AAPL", "Apple Inc.", "Technology", "Consumer Electronics", "NASDAQ", 3400.0,
+            "AAPL", new Company("AAPL", "Apple Inc.", "Technology", "Consumer Electronics", "NASDAQ", 3400.0, MarketCap.LARGE,
                     "Designs, manufactures, and markets smartphones, computers, and wearables."),
-            "MSFT", new Company("MSFT", "Microsoft Corporation", "Technology", "Software—Infrastructure", "NASDAQ", 3100.0,
+            "MSFT", new Company("MSFT", "Microsoft Corporation", "Technology", "Software—Infrastructure", "NASDAQ", 3100.0, MarketCap.LARGE,
                     "Develops and licenses software, services, devices, and cloud solutions."),
-            "GOOGL", new Company("GOOGL", "Alphabet Inc.", "Communication Services", "Internet Content & Information", "NASDAQ", 2200.0,
+            "GOOGL", new Company("GOOGL", "Alphabet Inc.", "Communication Services", "Internet Content & Information", "NASDAQ", 2200.0, MarketCap.LARGE,
                     "Provides search, advertising, cloud computing, and other internet-related services."),
-            "AMZN", new Company("AMZN", "Amazon.com, Inc.", "Consumer Discretionary", "Internet Retail", "NASDAQ", 2000.0,
+            "AMZN", new Company("AMZN", "Amazon.com, Inc.", "Consumer Discretionary", "Internet Retail", "NASDAQ", 2000.0, MarketCap.LARGE,
                     "Operates e-commerce, cloud computing, and digital streaming businesses."),
-            "TSLA", new Company("TSLA", "Tesla, Inc.", "Consumer Discretionary", "Auto Manufacturers", "NASDAQ", 900.0,
+            "TSLA", new Company("TSLA", "Tesla, Inc.", "Consumer Discretionary", "Auto Manufacturers", "NASDAQ", 900.0, MarketCap.LARGE,
                     "Designs and manufactures electric vehicles, energy storage, and solar products."),
-            "NVDA", new Company("NVDA", "NVIDIA Corporation", "Technology", "Semiconductors", "NASDAQ", 3000.0,
+            "NVDA", new Company("NVDA", "NVIDIA Corporation", "Technology", "Semiconductors", "NASDAQ", 3000.0, MarketCap.LARGE,
                     "Designs GPUs and AI computing platforms for gaming, data center, and automotive markets."),
-            "META", new Company("META", "Meta Platforms, Inc.", "Communication Services", "Internet Content & Information", "NASDAQ", 1300.0,
-                    "Builds social media, advertising, and virtual/augmented reality platforms.")
+            "META", new Company("META", "Meta Platforms, Inc.", "Communication Services", "Internet Content & Information", "NASDAQ", 1300.0, MarketCap.LARGE,
+                    "Builds social media, advertising, and virtual/augmented reality platforms."),
+            "RBLX", new Company("RBLX", "Roblox Corporation", "Communication Services", "Electronic Gaming & Multimedia", "NYSE", 28.0, MarketCap.MID,
+                    "Operates an online platform and marketplace for immersive user-generated 3D experiences."),
+            "IONQ", new Company("IONQ", "IonQ, Inc.", "Technology", "Computer Hardware", "NYSE", 2.5, MarketCap.SMALL,
+                    "Develops trapped-ion quantum computing hardware and cloud-accessible quantum systems.")
     );
 
     public Optional<Company> findByTicker(String ticker) {

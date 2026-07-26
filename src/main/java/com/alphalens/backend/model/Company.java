@@ -10,6 +10,7 @@ public record Company(
         String industry,
         String exchange,
         double marketCapBillions,
+        MarketCap marketCap,
         String description
 ) {
 }
