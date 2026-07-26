@@ -1,3 +1,21 @@
 spring:
   application:
     name: backend
+  # No datasource is configured yet and no code uses JPA (CompanyService is in-memory) -
+  # excluded so the app can start. Remove once reference-data-service gets a real Postgres datasource.
+  autoconfigure:
+    exclude:
+      - org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration
+      - org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
+  ai:
+    anthropic:
+      api-key: ${ANTHROPIC_API_KEY}
+      chat:
+        options:
+          model: claude-sonnet-5
+
+movement:
+  thresholds:
+    large: 2.0
+    mid: 3.0
+    small: 6.0
